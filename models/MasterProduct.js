@@ -2,7 +2,7 @@ const config = require('./../config');
 const mongoose = require('mongoose');
 mongoose.connect(config.dbUri,{ useNewUrlParser: true });
 
-var Schema = mongoose.schema;
+var Schema = mongoose.Schema;
 
 var MasterProductSchema = new Schema({
     productId : {type : String, required : true},

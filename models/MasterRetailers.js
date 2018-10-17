@@ -2,7 +2,7 @@ const config = require('./../config');
 const mongoose = require('mongoose');
 mongoose.connect(config.dbUri,{ useNewUrlParser: true });
 
-var Schema = mongoose.schema;
+var Schema = mongoose.Schema;
 
 var MasterRetailerSchema = new Schema({
     retailerId : {type : String, required : true},
@@ -13,9 +13,10 @@ var MasterRetailerSchema = new Schema({
     contactNumber : {type : Number, required : true},
     email : {type : String},
     vatNumber : {type : String},
-    creditLimitDay : {type : Number},
-    codEligibility : {type : Boolean},
-    creditLimit : {type : Number},
+    status : {type : String, enum:['Active','Deactive'], default : 'Active'},
+    creditLimitDay : {type : Number , default : 75},
+    codEligibility : {type : Boolean, default : true},
+    creditLimit : {type : Number, default : 50000},
     updatedBy : {type : String}
 }, 
 {
