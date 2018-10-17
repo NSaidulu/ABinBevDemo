@@ -15,7 +15,15 @@ router.get('/findRetailer/:retailerId', function(req, res) {
     findRetailer(req.params.retailerId, function(result) {
         res.json(result);
     })
-})
+});
+
+//Delete retailer
+const deleteRetailer = require('./delete-retailer');
+router.post('/deleteRetailer/:retailerId', function(req, res) {
+    deleteRetailer(req.params.retailerId, function(result) {
+        res.json(result);
+    })
+});
 
 
 
