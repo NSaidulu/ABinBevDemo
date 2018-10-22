@@ -5,7 +5,7 @@ const {statuses} = require('./../../utilities/constants');
 module.exports = function(retailerId, callback) {
     let response = new Response();
 
-   if(!retailerId|| !retailerId.length) {
+   if(!retailerId) {
         response.setStatus(statuses.clientError);
         response.setError("Invalid retailerId");
         response.setMessage("Retailer id is invalid");

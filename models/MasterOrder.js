@@ -6,14 +6,14 @@ var Schema = mongoose.Schema;
 
 var MasterOrderSchema = new Schema({
     orderId : {type : String, required : true},
-    orderNumber : {type : String, required : true, unique : true},
     retqilerId : {type : String, required : true},
+    productDetails : {type : Array , default : []},
     orderDate : {type : Date},
     orderValue : {type : Number},
     PONumber : {type : String, unique : true},
     invoiceNumber : {type : String, Unique : true},
-    orderStatus : {type : String, enum : ['Pending','Verified','Approved','Rejected','Completed']},
-    invoiceStatus : {type : String}
+    orderStatus : {type : String, enum : ['Pending','Verified','Approved','Rejected','Completed'], default : 'Pending'},
+    invoiceStatus : {type : String, enum : ['Pending','Approved'], default : 'Pending'}
 }, 
 {
     timestamps: true

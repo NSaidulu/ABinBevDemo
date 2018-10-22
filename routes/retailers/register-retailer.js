@@ -12,27 +12,27 @@ module.exports = function(data, callback) {
         response.setError("Invalid Data");
         response.setMessage("Retailer data is invalid");
         callback(response);
-    } else if (!data.retailerName || !data.retailerName.length) {
+    } else if (!data.retailerName) {
         response.setStatus(statuses.clientError);
         response.setError("Invalid retailerName");
         response.setMessage("RetailerName is invalid");
         callback(response);
-    } else if(!data.email || !data.email.length || !validator.isEmail(data.email)) {
+    } else if(!data.email || !validator.isEmail(data.email)) {
         response.setStatus(statuses.clientError);
         response.setError("Invalid Email");
         response.setMessage("Email is invalid");
         callback(response);
-    } else if(!data.phone || !data.phone.length) {
+    } else if(!data.phone) {
         response.setStatus(statuses.clientError);
         response.setError("Invalid Phone");
         response.setMessage("Phone number is invalid");
         callback(response);
-    } else if(!data.zipCode || !data.zipCode.length) {
+    } else if(!data.zipCode) {
         response.setStatus(statuses.clientError);
         response.setError("Invalid ZipCode");
         response.setMessage("ZipCode is invalid");
         callback(response);
-    } else if(!data.vatNumber || !data.vatNumber.length) {
+    } else if(!data.vatNumber) {
         response.setStatus(statuses.clientError);
         response.setError("Invalid VatNumber");
         response.setMessage("VatNumber is invalid");
